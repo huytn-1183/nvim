@@ -103,6 +103,7 @@ Plug 'vim-ruby/vim-ruby'
 " Plug 'sindrets/diffview.nvim'
 " source ~/.config/nvim/diffview.vim
 
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 call plug#end()    
 
 set relativenumber   
