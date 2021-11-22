@@ -1,30 +1,10 @@
 call plug#begin('~/.vim/plugged')    
-
-" >>> Dark powered asynchronous completion framework for neovim/Vim8
-" pip3 install --user pynvim
-" pip3 install --user --upgrade pynvim
-" :UpdateRemotePlugins
-
-if has('nvim')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-	Plug 'Shougo/deoplete.nvim'
-	Plug 'roxma/nvim-yarp'
-	Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" >>> deoppet dark powered neo-snippet
-" pip3 install --user pynvim
-" :UpdateRemotePlugins
-
-Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' }
-
 " >>> ALE Asynchronous Lint Engine
 Plug 'dense-analysis/ale'
 let g:ale_fixers = {    
 			\   'javascript': ['prettier', 'eslint'],    
+			\   'typescript': ['prettier', 'tslint'],
+			\   'typescriptreact': ['prettier', 'tslint'],
 			\   'css': ['prettier'],    
 			\   'scss': ['prettier'],    
 			\   'ruby': ['standardrb', 'rubocop'],    
@@ -46,9 +26,9 @@ let g:airline_theme = 'codedark'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " >>> Javascript support
-
 Plug 'pangloss/vim-javascript'    
-" source ~/.config/nvim/vim-javascript.vim
+source ~/.config/nvim/vim-javascript.vim
+Plug 'mxw/vim-jsx'
 
 " >>> Insert or delete brackets, parens, quotes in pair.
 
@@ -80,7 +60,6 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 source ~/.config/nvim/nerdtree.vim
 
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }    
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }    
 " Plug 'fatih/vim-go', { 'tag': '*' }    
 " Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }    
 
@@ -103,7 +82,8 @@ Plug 'vim-ruby/vim-ruby'
 " Plug 'sindrets/diffview.nvim'
 " source ~/.config/nvim/diffview.vim
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }    
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --ts-completer' }
 call plug#end()    
 
 set relativenumber   
@@ -112,6 +92,9 @@ colorscheme codedark
 
 nnoremap <C-p> :vi ~/.config/nvim/init.vim<CR> 
 
-call deoplete#custom#source('sources', {
-			\ '_': ['ale'],
-			\})
+" call deoplete#custom#source('sources', {
+"			\ '_': ['ale'],
+"			\})
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
