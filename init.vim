@@ -10,7 +10,7 @@ let g:ale_fixers = {
 			\   'ruby': ['standardrb', 'rubocop'],    
 			\   'python': ['flake8', 'pylint'],    
 			\}    
-let g:ale_fix_on_save = 1    
+let g:ale_fix_on_save = 0
 
 " >>> vim-code-dark is a dark color scheme for Vim heavily inspired by the look of the Dark+ scheme of Visual Studio Code.
 
@@ -58,6 +58,9 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>    
 nnoremap <C-b> :NERDTreeToggle<CR>    
 source ~/.config/nvim/nerdtree.vim
+set mouse=a
+let g:NERDTreeMouseMode=3
+
 
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }    
 " Plug 'fatih/vim-go', { 'tag': '*' }    
