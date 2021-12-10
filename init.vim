@@ -14,12 +14,20 @@ let g:ale_fix_on_save = 0
 
 " >>> vim-code-dark is a dark color scheme for Vim heavily inspired by the look of the Dark+ scheme of Visual Studio Code.
 
-Plug 'tomasiser/vim-code-dark'    
+" Plug 'tomasiser/vim-code-dark'    
 
 " >>> Lean & mean status/tabline for vim that's light as air.
 
 Plug 'vim-airline/vim-airline'
-let g:airline_theme = 'codedark'
+" let g:airline_theme = 'codedark'
+"
+" >>> joshdick/onedark.vim
+Plug 'joshdick/onedark.vim'
+let g:airline_theme='onedark'
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+
  
 " >>> Git change support
 
@@ -34,9 +42,6 @@ Plug 'mxw/vim-jsx'
 
 Plug 'jiangmiao/auto-pairs'    
 
-" >>> This is a massive (in a good way) Vim plugin for editing Ruby on Rails applications.
-
-Plug 'tpope/vim-rails'    
 
 " >>> Adds filetype glyphs (icons) to various vim plugins
 " required: https://github.com/ryanoasis/nerd-fonts
@@ -74,11 +79,16 @@ let g:fzf_action = {
 			\ 'ctrl-t': 'tab split',    
 			\ 'ctrl-h': 'split',    
 			\ 'ctrl-v': 'vsplit' }    
-nnoremap <C-l> :Lines<CR>    
-nnoremap <C-f> :Files<CR>    
+nnoremap <C-f> :Lines<CR>    
+nnoremap <C-p> :Files<CR>    
 
 Plug '~/my-prototype-plugin'    
 Plug 'vim-ruby/vim-ruby'    
+
+" >>> This is a massive (in a good way) Vim plugin for editing Ruby on Rails applications.
+
+Plug 'tpope/vim-rails'    
+
 
 " >>> Single tabpage interface for easily cycling through diffs for all modified files for any git rev.
 
@@ -91,9 +101,9 @@ call plug#end()
 
 set relativenumber   
 set encoding=UTF-8    
-colorscheme codedark
+colorscheme onedark
 
-nnoremap <C-p> :vi ~/.config/nvim/init.vim<CR> 
+nnoremap <C-m> :vi ~/.config/nvim/init.vim<CR> 
 
 " call deoplete#custom#source('sources', {
 "			\ '_': ['ale'],
