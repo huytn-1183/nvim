@@ -23,3 +23,10 @@ sudo dnf install cmake gcc-c++ make python3-devel
 cd .vim/plugged/YouCompleteMe/
 python3 install.py --ts-completer
 ```
+
+# Thứ tự cài đặt
+- python3
+- nvim
+- vim-plug
+
+Nếu bị lỗi thì gỡ ngược thứ tự và cài lại
